@@ -89,8 +89,8 @@ JVM은 JAVA와 OS사이에서 중개자 역할을 수행하여 JAVA가 OS에 구
 
 ***
 ### 2.3 Compiler 기술들
-* [Hot Spot Detection]
-* [Method inlining]
+* Hot Spot Detection
+* Method inlining
 * [reflection]
 
 
@@ -98,6 +98,4 @@ JVM은 JAVA와 OS사이에서 중개자 역할을 수행하여 JAVA가 OS에 구
 
 [Garbage collector]: https://google.com
 [JIT]: JIT.md
-[Hot Spot Detection]: https://google.com
-[Method inlining]: https://google.com
 [reflection]: https://google.com
