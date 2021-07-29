@@ -72,7 +72,7 @@ JVM은 JAVA와 OS사이에서 중개자 역할을 수행하여 JAVA가 OS에 구
 * [reflection]
 
 [Garbage collector]: https://google.com
-[JIT]: https://google.com
+[JIT]: java/JVM/JIT.md
 [Hot Spot Detection]: https://google.com
 [Method inlining]: https://google.com
 [reflection]: https://google.com
