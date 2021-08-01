@@ -96,6 +96,6 @@ JVM은 JAVA와 OS사이에서 중개자 역할을 수행하여 JAVA가 OS에 구
 
 여담 : 검색을 하다가 stack overflow의 글을 보는중에 댓글을 보니 openjdk의 개발자가 될거 아니라면 소스코드나 작성 or 읽으라 해서 적당한 선에서 그만두었다...
 
-[Garbage collector]: https://google.com
+[Garbage collector]: Garbage%20Collection.md
 [JIT]: JIT.md
-[reflection]: https://google.com
+[reflection]: https://github.com/ryunian/Study/blob/master/java/Reflection/Reflection.md
