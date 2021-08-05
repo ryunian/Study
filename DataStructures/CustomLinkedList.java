@@ -143,6 +143,8 @@ public class CustomLinkedList {
 
     @Override
     public String toString() {
+        if(isEmpty()) return "Empty";
+
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         for (Node x = first; x != null; x = x.next) {
@@ -196,6 +198,9 @@ public class CustomLinkedList {
         list.set(5, 5);
         System.out.println("Set Idx(5) Value(5) : " + list.get(5));
         // Set Idx(5) Value(5) : 5
+
+        System.out.println("Show List : " + list);
+        // Show List : [10, 1, 2, 3, 3, 5, 7, 8, -1]
 
         System.out.println("Size : " + list.size());
         // Size : 9
