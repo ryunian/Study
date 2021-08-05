@@ -129,6 +129,17 @@ public class CustomLinkedList {
         return size == 0;
     }
 
+    public void clear() {
+        for (Node cur = first; cur != null; ) {
+            Node next = cur.next;
+            cur.next = null;
+            cur.prev = null;
+            cur = next;
+        }
+        first = last = null;
+        size = 0;
+    }
+
     private static class Node {
         Node prev;
         Node next;
@@ -204,6 +215,8 @@ public class CustomLinkedList {
 
         System.out.println("Size : " + list.size());
         // Size : 9
+
+        list.clear();
 
         System.out.println("isEmpty : " + list.isEmpty());
         // isEmpty : false
