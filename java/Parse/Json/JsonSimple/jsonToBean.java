@@ -1,6 +1,6 @@
 package Parse.Json.JsonSimple;
 
-import Parse.Json.Members;
+import Parse.Members;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 

@@ -1,6 +1,6 @@
 package Reflection;
 
-import Parse.Json.Members;
+import Parse.Members;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

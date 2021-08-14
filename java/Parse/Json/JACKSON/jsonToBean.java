@@ -1,6 +1,6 @@
 package Parse.Json.JACKSON;
 
-import Parse.Json.Members;
+import Parse.Members;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

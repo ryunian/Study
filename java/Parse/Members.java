@@ -1,4 +1,4 @@
-package Parse.Json;
+package Parse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +8,15 @@ public class Members {
     private int age;
     private String secretIdentity;
     private List<String> powers = new ArrayList<>();
+
+    public Members() {}
+
+    public Members(String name, int age, String secretIdentity, List<String> powers) {
+        this.name = name;
+        this.age = age;
+        this.secretIdentity = secretIdentity;
+        this.powers = powers;
+    }
 
     public String getName() {
         return name;
