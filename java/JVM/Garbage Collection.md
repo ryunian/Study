@@ -1,7 +1,9 @@
 # 1. Garbage Collection 란?
 > C언어에서 malloc(), realloc() 등의 함수를 통하여 프로그래머가 힙 영역에 동적할당하고 free() 함수를 통해 할당을 해제하는 작업을 프로그래머가 직접한다. 
 > 하지만 자바에서는 그 작업을 JVM에서 전적으로 맡고 스스로 수행한다.  
-> 이 기능을 가비지 컬렉션(Garbage Collection)이라고 부른다.
+> 이 기능을 가비지 컬렉션(Garbage Collection)이라고 부른다.  
+
+> Java GC는 객체가 가비지인지 판별하기 위해서 reachability라는 개념을 사용한다. 어떤 객체에 유효한 참조가 있으면 'reachable'로, 없으면 'unreachable'로 구별하고, unreachable 객체를 가비지로 간주해 GC를 수행한다. 한 객체는 여러 다른 객체를 참조하고, 참조된 다른 객체들도 마찬가지로 또 다른 객체들을 참조할 수 있으므로 객체들은 참조 사슬을 이룬다. 이런 상황에서 유효한 참조 여부를 파악하려면 항상 유효한 최초의 참조가 있어야 하는데 이를 객체 참조의 root set이라고 한다.
 
 <img src="https://github.com/ryunian/Study/blob/master/image/Garbage-collection.png?raw=true" width="700" height="500">
 
@@ -80,7 +82,21 @@
 * Compaction : 각 객체들이 연속되게 쌓이도록 힙의 가장 앞 부분부터 채워서 객체가 존재하는 부분과 객체가 없는 부분으로 나눈다
 
 ### 7. 추가
-[Java Reference와 GC]: https://d2.naver.com/helloworld/329631
+#####Reference
+* java.lang.ref 패키지를 이용하여 reachable 객체들을 strongly reachable, softly reachable, weakly reachable, phantomly reachable로 더 자세히 구별하여 GC 때의 동작을 다르게 지정할 수 있게 되었다. 다시 말해, GC 대상 여부를 판별하는 부분에 사용자 코드가 개입할 수 있게 되었다.
+
+
+* strongly reachable: root set으로부터 시작해서 어떤 reference object도 중간에 끼지 않은 상태로 참조 가능한 객체, 다시 말해, 객체까지 도달하는 여러 참조 사슬 중 reference object가 없는 사슬이 하나라도 있는 객체
+			 
+* softly reachable: strongly reachable 객체가 아닌 객체 중에서 weak reference, phantom reference 없이 soft reference만 통과하는 참조 사슬이 하나라도 있는 객체
+			 
+* weakly reachable: strongly reachable 객체도 softly reachable 객체도 아닌 객체 중에서, phantom reference 없이 weak reference만 통과하는 참조 사슬이 하나라도 있는 객체
+			 
+* phantomly reachable: strongly reachable 객체, softly reachable 객체, weakly reachable 객체 모두 해당되지 않는 객체. 이 객체는 파이널라이즈(finalize)되었지만 아직 메모리가 회수되지 않은 상태이다.
+			 
+* unreachable: root set으로부터 시작되는 참조 사슬로 참조되지 않는 객체
+
+* [Java Reference와 GC] 
 
 출처 :   
 https://d2.naver.com/helloworld/1329   
@@ -89,3 +105,4 @@ https://donghyeon.dev/java/2020/03/31/%EC%9E%90%EB%B0%94%EC%9D%98-JVM-%EA%B5%AC%
 [링크1]: https://imp51.tistory.com/entry/G1-GC-Garbage-First-Garbage-Collector-Tuning
 [링크2]: https://johngrib.github.io/wiki/java-g1gc/
 [링크3]: https://code-factory.tistory.com/48
+[Java Reference와 GC]: https://d2.naver.com/helloworld/329631
