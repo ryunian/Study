@@ -7,8 +7,8 @@ JVM은 JAVA와 OS사이에서 중개자 역할을 수행하여 JAVA가 OS에 구
 <img src="https://user-images.githubusercontent.com/51253582/127321049-1fff035f-7c5a-470e-bac2-e1c85e573ed9.png"  width="500" height="300">
 <img src="https://github.com/ryunian/Study/blob/master/image/java_compile.png?raw=true" width="500" height="300">
 
-그림을 보면 C언어는 운영체제마다 각각에 맞는 컴파일러가 있어야 되지만, JAVA는 그 운영체제에 맞는 JVM만 있으면 잘 동작한다.
-그러나 이러한 형태가 장점이 될수도 있고 단점이 될수 있다.
+그림을 보면 C언어는 운영체제마다 각각에 맞는 컴파일러가 있어야 되지만, JAVA 는 그 운영체제에 맞는 JVM 만 있으면 잘 동작한다.
+그러나 이러한 형태가 장점이 될수도 있고 단점이 될 수 있다.
 
 장점)
 
