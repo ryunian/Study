@@ -2,6 +2,7 @@
 
 <img src="https://github.com/ryunian/Study/blob/master/image/operator.png?raw=true" width="700" height="500">
 
+<br><br>
 ``` java
 public class Operator {
     public static void main(String[] args) {
@@ -33,7 +34,7 @@ public class Operator {
     }
 }
 ```
-
+<br><br>
 ### instanceof
 > 참조변수가 참조하고 있는 인스턴스의 실제 타입을 알아보기 위해 instanceof 연산자를 사용합니다. (주로 캐스팅하기 위해 확인한다)  
 > 주로 조건문에 사용되며, instanceof의 왼쪽에는 참조변수를 오른쪽에는 타입(클래스명)이 피연산자로 위치합니다.    
@@ -66,7 +67,7 @@ class Parent {}
 
 class Child extends Parent {}
 ```
-
+<br><br>
 ### 3항 연산자
 > 조건식 ? 반환값1(true) : 반환값2(false)  
 * 코드를 짧게 쓸수 있다는 장점이 있습니다.

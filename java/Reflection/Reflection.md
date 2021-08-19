@@ -23,7 +23,8 @@ public class Test {
         Class superClass = c.getSuperclass();
     }
 }
-```   
+```
+<br><br>
 ### 사용처
 * Java Serialization
 > 객체를 직렬화(Serialization) 해야 할 경우 Serializable 인터페이스를 구현한다.    
@@ -33,7 +34,7 @@ public class Test {
 * Apache Commons BeanUtils library  
 * Spring @Autowired
 
-
+<br><br>
 ### 이슈
 1. Reflection을 사용한 코드는 느리다  
     > 적절히 사용한 Reflection은 오히려 성능을 향상시킬 수 있으며, 또한 많은 이득을 제공한다.  
@@ -47,6 +48,7 @@ public class Test {
     > 대신, 실행시 발생할 수 있는 Exception을 처리하기 위한 try/catch문을 추가해야 한다.
 
 
+<br><br>
 출처 :    
 https://kellis.tistory.com/70   
 https://codechacha.com/ko/reflection/   

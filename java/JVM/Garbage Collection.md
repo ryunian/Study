@@ -7,15 +7,18 @@
 
 <img src="https://github.com/ryunian/Study/blob/master/image/Garbage-collection.png?raw=true" width="700" height="500">
 
+<br><br>
 ### 2. weak generational hypothesis   
 * 대부분의 객체는 금방 접근 불가능 상태(unreachable)가 됨   
 * 오래된 객체에서 젊은 객체로의 참조는 아주 적게 존재  
 > 가비지 컬렉터는 위 두가지 가설 하에 만들어졌다 (전재조건)
 
+<br><br>
 ### 3. Stop the World
 > stop-the-world란, GC을 실행하기 위해 JVM이 애플리케이션 실행을 멈추는 것이다. stop-the-world가 발생하면 GC를 실행하는 쓰레드를 제외한 나머지 쓰레드는 모두 작업을 멈춘다.   
 > GC 작업을 완료한 이후에야 중단했던 작업을 다시 시작한다. 어떤 GC 알고리즘을 사용하더라도 stop-the-world는 발생한다. 대개의 경우 GC 튜닝이란 이 stop-the-world 시간을 줄이는 것이다.
 
+<br><br>
 ### 4.1 Young Generation
 * Eden
 * Survivor 1/2
@@ -25,11 +28,12 @@
 > 4. 하나의 Survivor 영역이 가득 차게 되면 그 중에서 살아남은 객체를 다른 Survivor 영역으로 이동한다. 그리고 가득 찬 Survivor 영역은 아무 데이터도 없는 상태로 된다.   
 > 5. 이 과정을 반복하다가 계속해서 살아남아 있는 객체는 Old 영역으로 이동하게 된다.   
 
-
+<br><br>
 ### 4.2 Old generation
 > 접근 불가능 상태로 되지 않아 Young 영역에서 살아남은 객체가 여기로 복사된다. 대부분 Young 영역보다 크게 할당하며, 크기가 큰 만큼 Young 영역보다 GC는 적게 발생한다.    
 > 이 영역에서 객체가 사라질 때 Major GC(혹은 Full GC)가 발생한다고 말한다.   
 
+<br><br>
 ### 4.3 MetaSpace 
 >  Java 8에서 JVM 메모리 구조적인 개선 사항으로 Perm 영역이 Metaspace 영역으로 전환되고 기존 Perm 영역은 사라지게 되었다.   
 >  Metaspace 영역은 Heap이 아닌 Native 메모리 영역으로 취급하게 된다.   
@@ -38,6 +42,7 @@
 >  즉, 각종 메타 정보를 OS가 관리하는 영역으로 옮겨 Perm 영역의 사이즈 제한을 없앤 것이라 할 수 있다.
 
 
+<br><br>
 ### 5. Old 영역에 대한 GC 종류
 * Serial GC
 * Parallel GC
@@ -60,6 +65,7 @@
 [[링크1]] [[링크2]] [[링크3]]
 
 
+<br><br>
 ### 6. 기타 용어 설명
 * Minor GC : Young 영역에서 일어나는 GC   
 
@@ -81,6 +87,7 @@
 
 * Compaction : 각 객체들이 연속되게 쌓이도록 힙의 가장 앞 부분부터 채워서 객체가 존재하는 부분과 객체가 없는 부분으로 나눈다
 
+<br><br>
 ### 7. 추가
 #####Reference
 * java.lang.ref 패키지를 이용하여 reachable 객체들을 strongly reachable, softly reachable, weakly reachable, phantomly reachable로 더 자세히 구별하여 GC 때의 동작을 다르게 지정할 수 있게 되었다. 다시 말해, GC 대상 여부를 판별하는 부분에 사용자 코드가 개입할 수 있게 되었다.
