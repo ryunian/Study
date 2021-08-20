@@ -107,7 +107,7 @@ TREEIFY_THRESHOLD / UNTREEIFY_THRESHOLD 의 상수값 각각 8 과 6 에 따라�
 8과 6인경우는 만약 차이가 1이라면 어떤 한 키-값 쌍이 반복되어 삽입/삭제되는 경우 불필요하게 트리와 링크드 리스트를 변경하는 일이 반복되어 성능 저하가 발생할 수 있기 때문이다.
 
 
-### 1.5 HashMap.java 분석
+### 1.5 [HashMap.java 소스분석]
 
 
 
@@ -117,3 +117,5 @@ TREEIFY_THRESHOLD / UNTREEIFY_THRESHOLD 의 상수값 각각 8 과 6 에 따라�
 https://bcho.tistory.com/1072  
 https://d2.naver.com/helloworld/831311  
 https://velog.io/@cyranocoding/Hash-Hashing-Hash-Table%ED%95%B4%EC%8B%9C-%ED%95%B4%EC%8B%B1-%ED%95%B4%EC%8B%9C%ED%85%8C%EC%9D%B4%EB%B8%94-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%9D%98-%EC%9D%B4%ED%95%B4-6ijyonph6o
+
+[HashMap.java 소스분석]:https://github.com/ryunian/Study/blob/master/java/HashMap/method.md#hashmapjava-%EC%86%8C%EC%8A%A4-%ED%8C%8C%ED%95%B4%EC%B9%98%EA%B8%B0
