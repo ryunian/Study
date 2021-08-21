@@ -111,6 +111,126 @@ public class Main {
 > 1. 메소드의 이름과 return 타입은 동일하지만, 매개변수만 다른 메소드를 만드는 것을 의미한다.    
 > 2. 자바의 경우 정적으로 바인딩된다.  
 > 3. 메소드의 이름은 반드시 같지만, 인자의 개수나 타입은 달라야 된다.  
+
+<br><br>
   
 ### this
+> 일단 this 예약어와 this()는 다릅니다.    
+> this 는 '객체, 자기 자신' 을 나타내는 키워드입니다.  
+> 주로 메서드의 매개변수 이름이 필드와 같을 경우, 인스턴스 멤버인 필드임을 명시하고자 할떄 사용됩니다.  
+> this() 는 현재 클래스에 정의된 생성자를 부를때 사용됩니다.  
+> 
+
+```java
+class Child extends Parent {
+    int x = 1;
+
+    Child() {
+        System.out.println("make child");
+    }
+
+    public int getX() {
+        return this.x + 1;
+    }
+    public void setX(int x) {
+        this.x = x;
+    }
+}
+```
+
+> setX(int x) 메소드에서 매개변수 x와 필드의 x는 이름이 같기때문에 x를 사용할 경우 매개변수의 x를 가르킵니다.  
+> 여기서 필드의 x를 가르키기위해 this.x 를 사용합니다.  
+> 매개변수의 이름과 필드의 이름을 다르게 설정하면 되지 않을까 생각할수 있다.  
+> 물론 가능하지만, set 같은 경우로 봤을때 필드에 있는 x의 값을 변경하는건데 이 set메소드를 만들떄마다 일일히 바꿔주어야 하며,  
+> 메소드만 놓고 봤을때 해당 매개변수와 x랑 다른 것을 의미하는지로 착각할수도 있다. (즉, 가독성)  
+
+
+```java
+public class This{
+    private static final int DEFAULT_SIZE = 1;
+    int size;
+    public This() {
+        this(DEFAULT_SIZE);
+    }
+
+    public This(int size) {
+        this.size = size;
+    }
+}
+```
+> 예를 들어 ArrayList 같은 라이브러리에서 capacity 처럼 This 클래스는 인스턴스되면 size 도 함께 초기화 해야한다고 가정할때,  
+> 물론 인스턴스하면서 인자값을 넣어줄수 있지만, 클래스에서 정의한 최적의 기본값이 있을 것이고, 사용자는 그것을 잘 모를 떄가 많다.  
+> 그럴경우 인자값을 넣지 않고 인스턴스하면서 This() 생성자처럼 클래스에서 정의된 DEFAULT_SIZE 를 가지고 this(DEFAULT_SIZE)를 호출하여  
+> This(int size) 생성자를 통해 size 를 초기화해줄수 있다.  
+
+<br><br>
+
 ### super
+> super 란, 자식 클래스에서 상속받은 부모 클래스의 멤버변수를 참조할때 사용합니다.  
+> super() 란, 자식 클래스가 자신을 생성할 때 부모 클래스의 생성자를 불러 초기화 할때 사용됩니다.  
+> super()는 생성자의 첫줄에만 위치해야한다.   
+> 사실 생성자의 첫줄에 super()가 생략되어 있다. 바이트코드로 확인해보니 없는거 보니 런타임 시점에 생기는것으로 생각된다.  
+> 인스턴스 했을시 객체의 생성 순서는 최상위 부모(Object)부터 생성되며 내려가면서 생성된다 super()가 만약 첫줄에 없다면 이렇게 생성될수 없다.    
+
+```java
+package Class;
+
+class Animal {
+    // 동물의 숫자 상속되면 안된다.
+    private int AnimalCnt = 0;
+    String name;
+    int weight, age, x;
+
+    public Animal(String name, int weight, int age) {
+        this.name = name;
+        this.weight = weight;
+        this.age = age;
+        AnimalCnt++;
+    }
+
+    public int getAnimalCnt() {return AnimalCnt;}
+}
+
+class Cat extends Animal {
+    int x;
+
+    public Cat(int x, String name, int weight, int age) {
+        super(name, weight, age);
+        this.x = x;
+
+        // this.name = name;
+        // 물론 상속을 했기때문에 Cat 에도 name 은 존재한다.
+        // 그러나 AnimalCnt 는 private 이기 떄문에 접근할 수 없다.
+    }
+
+    public void printX() {
+        System.out.println("super.x = " + super.x);
+        System.out.println("x = " + x);
+    }
+
+    @Override
+    public String toString() {return "Cat{" + "name='" + name + '\'' + ", weight=" + weight + ", age=" + age + '}'; }
+}
+
+public class Super {
+    public static void main(String[] args) {
+        Animal cat = new Cat(1, "루나", 3, 5);
+
+        System.out.println(cat); // Cat{name='루나', weight=3, age=5}
+        System.out.println("Animal Cnt = " + cat.getAnimalCnt());
+        // Animal Cnt = 1
+
+        if (cat instanceof Cat) {
+            Cat realCat = (Cat) cat;
+            realCat.printX();
+            // super.x = 0
+            // x = 1
+        }
+    }
+}
+```
+
+> main을 보면 Cat 클래스는 인스턴스 될떄 부모인 Animal 타입으로 생성되었다.  
+> cat이 생성될떄 Animal 클래스의 AnimalCnt는 증가해야한다. AnimailCnt는 Cat과 상관이없는 멤버변수이기때문에 private를 통해 상속을 제한했다.  
+> Cat은 Animal을 상속했기 때문에 Name, weight, age를 가지고있다. 그렇기 떄문에 this.name을 통해 저장할수 있으나 AnimalCnt에 접근은 못한다.  
+> 그렇기 떄문에 super() 를 통해 부모의 생성자를 호출하여 해결할 수 있다.  

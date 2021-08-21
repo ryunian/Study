@@ -27,6 +27,9 @@ class Child extends Parent {
     public int getX() {
         return this.x + 1;
     }
+    public void setX(int x) {
+        this.x = x;
+    }
 }
 
 
