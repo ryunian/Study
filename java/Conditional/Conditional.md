@@ -1,11 +1,11 @@
-# Conditional vs If
+# Switch vs If
 > * branch statement는 레지스터 2개를 비교해서(혹은 레지스터와 상수를 비교해서)   
     특정 메모리 번지로 이동할 것이냐 말것이냐?를 결정합니다.  
 > * jump statement는 즉시 특정 메모리 번지로 이동하는 기능을 합니다.  
 
 <br>
 
-### Conditional 문 (jump statement 기반)
+### Switch 문 (jump statement 기반)
 > * 조건 만족? 안만족? 이 아니라, switch문 시작 시 입력받은 값을 확인하는
 > * instruction만 필요하다(점프테이블에서 해당값으로 찾아가므로).
 > * 따져야 할 조건이 많은 경우 switch문을 쓰는 것이 유리합니다.
