@@ -22,6 +22,6 @@
 
 ### 8. [String](https://github.com/ryunian/Study/blob/master/java/String/String.md)
 
-### 9. [HashMap](https://github.com/ryunian/Study/tree/master/java/HashMap)
+### 9. [HashMap](https://github.com/ryunian/Study/blob/master/java/HashMap/HashMap.md)
 
 ### 10. [Exception](https://github.com/ryunian/Study/blob/master/java/Exception/Exception.md)
