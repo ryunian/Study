@@ -54,5 +54,5 @@
 # Spring
 
 # Etc
-1. [PreparedStatement & Statement]
+1. [PreparedStatement & Statement](https://github.com/ryunian/Study/blob/master/etc/PreparedStatement&Statement.md) 
 1. [WAS & WebServer]
