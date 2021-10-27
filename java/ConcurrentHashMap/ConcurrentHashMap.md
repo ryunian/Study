@@ -177,6 +177,17 @@ final V putVal(K key, V value, boolean onlyIfAbsent) {
     }
 ```
 
+<br><br>
+
+## 3.1 멀티쓰레드 환경에서 get과 put 테스트 
+링크 >> [ConcurrentHashMapTest.java](https://github.com/ryunian/Study/blob/624fc19ec17b8b3da67f95f366f9a160c24c6985/Code/ConcurrentHashMap/ConcurrentHashMapTest.java)
+
+~~테스트의 정확성엔 의문이 들었지만~~  
+여러번 실행을 해봄으로 인해 HashMap과 ConcurrentHashMap 결과의 차이를 알게 되었다.
+
+<br><br>
+<hr>
+
 [출처]
 
 [https://pplenty.tistory.com/17](https://pplenty.tistory.com/17)
