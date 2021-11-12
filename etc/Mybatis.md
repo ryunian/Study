@@ -22,11 +22,11 @@
 
 ## Mybatis 아키텍쳐
 
-<img src="https://github.com/ryunian/Study/blob/master/image/Mybatis1.png?raw=true" width="700px" height="500px">
+<img src="https://github.com/ryunian/Study/blob/master/image/mybatis1.png?raw=true" width="700px" height="500px">
 
 ## 흐름
 
-<img src="https://github.com/ryunian/Study/blob/master/image/Mybatis2.png?raw=true" width="700px" height="500px">
+<img src="https://github.com/ryunian/Study/blob/master/image/mybatis2.png?raw=true" width="700px" height="500px">
 
 <br><br>
 
