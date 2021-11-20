@@ -55,7 +55,7 @@ Worst Case 경우 비어있는 버킷을 찾지 못하고 탐색을 시작한 �
 ### 1.3.2 Separate Chaining
 일반적으로 Open Addressing 은 Separate Chaining 보다 느리다. 
 Open Addressing의 경우 해시 버킷을 채운 밀도가 높아질수록 Worst Case 발생 빈도가 더 높아지기 때문이다 (애초에 충돌이 한번도 발생하지 않는다고 하더라도 int의 범위 만큼의 데이터만 저장이 가능하다)  
-반면 Separate Chaining 방식의 경우 해시 충돌이 잘 발생하지 않도록 보조 해시 함수를 통해 조정할수 있다면 Worst Case에 가까워 지는 빈도를 줄일수 있다.  
+반면 Separate Chaining 방식의 경우 해시 충돌이 잘 발생하지 않도록 보조 해시 함수를 통해 조정할수 있다면 Worst Case에 가까워 지는 빈도를 줄일 수 있다.  
 
 
 * linkedList : 각각의 버킷들을 연결리스트로 만들어 충돌이 발생하면 해당 버킷의 list에 추가하는 방식이다.

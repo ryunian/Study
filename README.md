@@ -56,5 +56,6 @@
 
 # Etc
 1. [PreparedStatement & Statement](https://github.com/ryunian/Study/blob/master/etc/PreparedStatement&Statement.md) 
-2. [WAS & WebServer]
+2. [WAS & WebServer](https://github.com/ryunian/Study/blob/master/etc/webserver&was.md)
 3. [Framework & Library](https://github.com/ryunian/Study/blob/master/etc/Framework&Library.md)
+4. [Mybatis](https://github.com/ryunian/Study/blob/master/etc/Mybatis.md)
